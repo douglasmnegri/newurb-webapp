@@ -4,7 +4,7 @@ export const login = async (creds: {
 }): Promise<void> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (creds.email === "harry@gmail.com" && creds.password === "password") {
+      if (creds.email === "harry@gmail.com" && creds.password === "teste123") {
         resolve();
       } else {
         reject();
