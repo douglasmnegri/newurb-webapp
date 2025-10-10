@@ -17,7 +17,13 @@ const ThemeSwitch = () => {
 
   return (
     <button
-      onClick={() => setTheme(theme === "dark" || resolvedTheme === "dark" ? "light" : "dark")}
+      onClick={() => {
+        // add a transient class that enables CSS transitions
+        document.documentElement.classList.add('theme-transition');
+        // toggle theme
+        setTheme(theme === "dark" || resolvedTheme === "dark" ? "light" : "dark");
+        window.setTimeout(() => document.documentElement.classList.remove('theme-transition'), 300);
+      }}
       className="p-2 text-gray-800 dark:text-gray-200 bg-transparent dark:bg-black"
       aria-label="Toggle Dark Mode"
     >

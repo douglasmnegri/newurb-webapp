@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,4 +67,13 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Smooth theme transition helper
+   We apply these transitions only when the `theme-transition` class is
+   present on the html element to avoid animating on first paint. */
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, fill 300ms ease, stroke 300ms ease;
 }
