@@ -11,7 +11,7 @@ import Download from "components/Download";
 export default function Page() {
   return (
     <>
-      <div>
+      <div className="contact-background">
         <Hero />
         <Features />
           <Section

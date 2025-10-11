@@ -2,7 +2,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="text-center my-32 mx-4 sm:mx-8 md:mx-16 lg:mx-24">
+    <section className="text-center mx-4 sm:mx-8 md:mx-16 lg:mx-24 mb-32">
+      <div className="flex flex-col items-center justify-center pt-24">
       <h1 className="font-sans text-3xl tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl dark:text-white mb-6">
         Manage your investments with <span className="font-bold">New Urb</span>
       </h1>
@@ -22,6 +23,7 @@ export default function Hero() {
         >
           Content
         </Link>
+        </div>
       </div>
     </section>
   );

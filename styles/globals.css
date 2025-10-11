@@ -92,7 +92,7 @@ html.theme-transition *::after {
 /* ------------------------------------------------------------
    Subtle grid + gradient background (light + dark mode)
    ------------------------------------------------------------ */
-@layer base {
+/* @layer base {
   body {
     background-image:
       linear-gradient(to right, hsl(var(--border)) 1px, transparent 1px),
@@ -112,7 +112,7 @@ html.theme-transition *::after {
     background-size: 40px 40px, 40px 40px, 100% 100%, 100% 100%;
     background-color: hsl(var(--background));
   }
-}
+} */
 
 .contact-background {
   position: relative;
