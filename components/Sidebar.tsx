@@ -21,8 +21,13 @@ export function AppSidebar() {
       icon: Home,
     },
     {
-      title: "Blog Posts",
-      url: "/dashboard/posts",
+      title: "Products",
+      url: "/dashboard/products",
+      icon: FileText,
+    },
+    {
+      title: "Educational Content",
+      url: "/dashboard/education",
       icon: FileText,
     },
     {
@@ -30,11 +35,6 @@ export function AppSidebar() {
       url: "/dashboard/settings",
       icon: Settings,
     },
-    {
-      title: "Products",
-      url: "/dashboard/products",
-      icon: FileText,
-    }
   ];
 
   return (
