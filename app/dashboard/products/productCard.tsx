@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export interface ProductCardProps {
   name: string;
   address: string;
@@ -6,30 +8,55 @@ export interface ProductCardProps {
   imageUrl: string;
 }
 
-function ProductCard({ name, address, price, squareMeter, imageUrl }: ProductCardProps) {
+export default function ProductCard({
+  name,
+  address,
+  price,
+  squareMeter,
+  imageUrl,
+}: ProductCardProps) {
   return (
-    <div className="border-t-2 border-gray-300 dark:border-gray-800 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
-      <div className="flex flex-col md:flex-row gap-4 m-4 p-4">
-        <div className="w-full md:w-1/3 h-48 relative">
-          <img
-            src={imageUrl}
-            alt={name}
-            className="w-full h-full object-cover rounded"
-          />
+    <div className="flex flex-col md:flex-row border border-gray-200 dark:border-gray-700 rounded-2xl overflow-hidden bg-white dark:bg-gray-800 shadow-sm hover:shadow-md transition-shadow duration-300">
+      {/* Left Image */}
+      <div className="relative w-full md:w-3/5 h-56 md:h-72">
+        <Image
+          src={imageUrl || "/images/placeholder.jpg"}
+          alt={name}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+
+      {/* Right Content */}
+      <div className="flex flex-col justify-between w-full p-5">
+        <div>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            Lote/Terreno para comprar com {squareMeter} m² em
+          </p>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mt-2">
+            {name}
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300 ">{address}</p>
         </div>
-        <div className="flex flex-col justify-between p-4 w-full md:w-2/3">
+
+        {/* Bottom Buttons */}
+        <div className="flex justify-between my-6">
           <div>
-            <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{name}</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">{address}</p>
+            <p className="text-lg font-bold text-gray-900 dark:text-white">
+              {price}
+            </p>
           </div>
-          <div className="flex justify  -between text-gray-800 dark:text-gray-200">
-            <span className="font-medium">{price}</span>
-            <span className="font-medium">{squareMeter} m²</span>
+          <div className="flex gap-5"> 
+            <button className="text-black font-semibold hover:underline">
+              Telefone
+            </button>
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-5 rounded-lg">
+              Whatsapp
+            </button>
           </div>
         </div>
       </div>
     </div>
   );
 }
-
-export default ProductCard;
