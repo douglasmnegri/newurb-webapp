@@ -6,7 +6,6 @@ export interface Product {
   price: string;
   squareMeter: string;
   imageUrl: string;
-  // Details page data
   images: string[];
   description: string;
   totalArea: string;

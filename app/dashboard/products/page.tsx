@@ -1,4 +1,7 @@
+// app/dashboard/products/page.tsx
 import ProductCard from "./productCard";
+import { products } from "@/lib/products";
+
 export default function ProductsPage() {
   return (
     <main className="m-12 bg-gray-50 dark:bg-gray-900 min-h-screen">
@@ -12,30 +15,17 @@ export default function ProductsPage() {
       </div>
 
       <div className="space-y-6">
-        <ProductCard
-          id="modern-apartment" 
-          name="Modern Apartment"
-          address="123 Main St, Cityville"
-          price="$250,000"
-          squareMeter="85"
-          imageUrl="/images/land_1.jpeg" // ✅ right path
-        />
-        <ProductCard
-          id="cozy-cottage" 
-          name="Cozy Cottage"
-          address="456 Country Rd, Townsville"
-          price="$180,000"
-          squareMeter="120"
-          imageUrl="/images/land_2.webp"
-        />
-        <ProductCard
-          id="luxury-villa" 
-          name="Luxury Villa"
-          address="789 Ocean Dr, Beach City"
-          price="$1,200,000"
-          squareMeter="350"
-          imageUrl="/images/land_3.png"
-        />
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            name={product.name}
+            address={product.address}
+            price={product.price}
+            squareMeter={product.squareMeter}
+            imageUrl={product.imageUrl}
+          />
+        ))}
       </div>
     </main>
   );
