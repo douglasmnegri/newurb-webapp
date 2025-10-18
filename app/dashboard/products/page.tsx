@@ -13,6 +13,7 @@ export default function ProductsPage() {
 
       <div className="space-y-6">
         <ProductCard
+          id="modern-apartment" 
           name="Modern Apartment"
           address="123 Main St, Cityville"
           price="$250,000"
@@ -20,6 +21,7 @@ export default function ProductsPage() {
           imageUrl="/images/land_1.jpeg" // ✅ right path
         />
         <ProductCard
+          id="cozy-cottage" 
           name="Cozy Cottage"
           address="456 Country Rd, Townsville"
           price="$180,000"
@@ -27,6 +29,7 @@ export default function ProductsPage() {
           imageUrl="/images/land_2.webp"
         />
         <ProductCard
+          id="luxury-villa" 
           name="Luxury Villa"
           address="789 Ocean Dr, Beach City"
           price="$1,200,000"
