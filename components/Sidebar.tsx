@@ -30,6 +30,11 @@ export function AppSidebar() {
       url: "/dashboard/settings",
       icon: Settings,
     },
+    {
+      title: "Products",
+      url: "/dashboard/products",
+      icon: FileText,
+    }
   ];
 
   return (
