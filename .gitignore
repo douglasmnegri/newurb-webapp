@@ -23,3 +23,7 @@ Thumbs.db
 # Build artifacts
 /build
 /dist
+
+
+# Temporary files
+out/
