@@ -31,6 +31,11 @@ export function AppSidebar() {
       icon: FileText,
     },
     {
+      title: "Finances",
+      url: "/dashboard/finances",
+      icon: Settings,
+    },
+    {
       title: "Settings",
       url: "/dashboard/settings",
       icon: Settings,
@@ -65,7 +70,7 @@ export function AppSidebar() {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href="/login">
+              <Link href="/">
                 <LogOut className="w-4 h-4" />
                 <span>Logout</span>
               </Link>
